@@ -36,7 +36,7 @@ buttonElement.addEventListener('click' , function(){
 
     }else{
         
-        document.getElementById('biglietto').innerHTML= 'il biglietto costa :' + prezzoTotale
+        document.getElementById('biglietto').innerHTML= 'il biglietto costa :' + prezzoTotale.toFixed(2)
     }
 
 
