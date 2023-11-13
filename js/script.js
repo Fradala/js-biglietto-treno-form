@@ -1,7 +1,7 @@
 
 
-/*const kilometriPasseggiero = parseFloat ( prompt( 'dichiara i km che vuoi percorrere' ));
-const etàPasseggiero = parseInt ( prompt( 'quanti anni hai'));*/
+const kilometriPasseggiero = parseFloat ( prompt( 'dichiara i km che vuoi percorrere' ));
+const etàPasseggiero = parseInt ( prompt( 'quanti anni hai'));
 const minorenne = etàPasseggiero < 18
 const pensionato = etàPasseggiero >= 65
 
@@ -23,13 +23,17 @@ const numMFixed = numM.toFixed(2);
 const numP = prezzoConScontoPensio;
 const numPFixed = numP.toFixed(2);
 
-document.getElementById('kilometri').innerHTML= kilometriPasseggiero
+if ( minorenne){
+    document.getElementById ('biglietto').innerHTML= 'il biglietto costa :' + numM.toFixed(2)
 
 
-const buttonElement = document.querySelector('button');
-buttonElement.addEventListener('click', function(){
+}else if( pensionato){
+    document.getElementById('biglietto').innerHTML= 'il biglietto costa :' + numP.toFixed(2)
+    
 
-    console.log('inizio funzione caalback')
-    prezzoTotale
-    console.log('fine call')
-})
+}else{
+    
+    document.getElementById('biglietto').innerHTML= 'il biglietto costa :' + prezzoTotale
+}
+
+
