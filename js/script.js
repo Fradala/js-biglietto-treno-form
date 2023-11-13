@@ -1,7 +1,7 @@
 const buttonElement = document.querySelector('button');
 
 
-buttonElement addEventListener('click' , function(){
+buttonElement.addEventListener('click' , function(){
 
     const kilometriPasseggiero = parseFloat ( document.getElementById('kilometri').value);
     const etàPasseggiero = parseInt ( document.getElementById('età').value);
@@ -31,7 +31,7 @@ buttonElement addEventListener('click' , function(){
 
 
     }else if( pensionato){
-        document.getElementById('biglietto').innerHTML= 'il biglietto costa :' + numP.toFixed(2)
+        document.getElementById('biglietto').innerHTML= 'il biglietto costa :' + numPFixed(2)
         
 
     }else{
