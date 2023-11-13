@@ -1,39 +1,49 @@
+const buttonElement = document.querySelector('button');
 
 
-const kilometriPasseggiero = parseFloat ( prompt( 'dichiara i km che vuoi percorrere' ));
-const etàPasseggiero = parseInt ( prompt( 'quanti anni hai'));
-const minorenne = etàPasseggiero < 18
-const pensionato = etàPasseggiero >= 65
+buttonElement addEventListener('click' , function(){
 
-const prezzoBigglietto1Km = 0.1976;
-const prezzoTotale = prezzoBigglietto1Km + kilometriPasseggiero;
+    const kilometriPasseggiero = parseFloat ( document.getElementById('kilometri').value);
+    const etàPasseggiero = parseInt ( document.getElementById('età').value);
+    const minorenne = etàPasseggiero < 18
+    const pensionato = etàPasseggiero >= 65
 
-
-
-let scontoMinorenni = prezzoTotale * 17.65 / 100;
-let scontoPensionati = prezzoTotale * 53.27 / 100;
+    const prezzoBigglietto1Km = 0.1976;
+    const prezzoTotale = prezzoBigglietto1Km + kilometriPasseggiero;
 
 
-const prezzoConScontMino = prezzoTotale - scontoMinorenni
-const prezzoConScontoPensio = prezzoTotale - scontoPensionati
 
-const numM = prezzoConScontMino;
-const numMFixed = numM.toFixed(2);
-
-const numP = prezzoConScontoPensio;
-const numPFixed = numP.toFixed(2);
-
-if ( minorenne){
-    document.getElementById ('biglietto').innerHTML= 'il biglietto costa :' + numM.toFixed(2)
+    let scontoMinorenni = prezzoTotale * 17.65 / 100;
+    let scontoPensionati = prezzoTotale * 53.27 / 100;
 
 
-}else if( pensionato){
-    document.getElementById('biglietto').innerHTML= 'il biglietto costa :' + numP.toFixed(2)
-    
+    const prezzoConScontMino = prezzoTotale - scontoMinorenni
+    const prezzoConScontoPensio = prezzoTotale - scontoPensionati
 
-}else{
-    
-    document.getElementById('biglietto').innerHTML= 'il biglietto costa :' + prezzoTotale
-}
+    const numM = prezzoConScontMino;
+    const numMFixed = numM.toFixed(2);
 
+    const numP = prezzoConScontoPensio;
+    const numPFixed = numP.toFixed(2);
+
+    if ( minorenne){
+        document.getElementById ('biglietto').innerHTML= 'il biglietto costa :' + numM.toFixed(2)
+
+
+    }else if( pensionato){
+        document.getElementById('biglietto').innerHTML= 'il biglietto costa :' + numP.toFixed(2)
+        
+
+    }else{
+        
+        document.getElementById('biglietto').innerHTML= 'il biglietto costa :' + prezzoTotale
+    }
+
+
+
+});
+
+
+
+   
 
